@@ -37,7 +37,7 @@ Note: the installation can take a while (10-15 min)
 
 ## Go to the `Chapters` folders and have fun :)
 
-### Chapter 1 content:
+### Chapter 1:
 
 - `Visualizing spatial data with CARTOframes.ipynb` - A Jupyter notebook for easily visualizing your data on a map using CARTOframes.
 
