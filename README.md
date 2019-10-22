@@ -1,7 +1,6 @@
 # Material for the ebook `Becoming a Spatial Data Scientist`
 
-## Link here
-### https://github.com/CartoDB/data-science-book
+### Link here: https://github.com/CartoDB/data-science-book
 
 ## Installation requirements
 
