@@ -1,0 +1,10 @@
+geopandas
+cartoframes==1.0b3
+shapely
+scikit-gstat
+libpysal
+esda
+pointpats
+rpy2
+rtree
+netCDF4
