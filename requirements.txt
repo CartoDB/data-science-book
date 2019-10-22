@@ -2,9 +2,11 @@ geopandas
 cartoframes==1.0b3
 shapely
 scikit-gstat
+scikit-learn
 libpysal
 esda
 pointpats
+splot
 rpy2
 rtree
 netCDF4
