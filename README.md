@@ -33,3 +33,13 @@ Click New -> Terminal and go to the directory where you cloned the Github reposi
 Note: the installation can take a while (10-15 min)
 
 ## Go to the `Chapters` folders and have fun :)
+
+### Chapter 1 content:
+
+- `Visualizing spatial data with CARTOframes.ipynb` - A Jupyter notebook for easily visualizing your data on a map using CARTOframes.
+
+- `Computing measures of spatial dependence.ipynb` - A Jupyter notebook for exploring spatial dependence in your data and visualize the results using CARTOframes.
+
+- `Discrete spatial models.ipynb` - A Jupyter notebook with examples of spatial models for discrete processes and visualize the results using CARTOframes.
+
+- `Continous spatial models.ipynb` - A Jupyter notebook with examples of spatial models for continuous processes and visualize the results using CARTOframes.
