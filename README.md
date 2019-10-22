@@ -1,18 +1,22 @@
 # Material for the ebook `Becoming a Spatial Data Scientist`
 
 ## Link here
-## https://github.com/CartoDB/data-science-book
+### https://github.com/CartoDB/data-science-book
 
-## Clone Github repository with the ebook material
+## Installation requirements
+
+The notebooks in this repository use a ready-to-run Docker image containing Jupyter applications and interactive computing tools. To run the notebooks, please follow the instructions below.
+
+### Clone the repository 
 
 `$ git clone git@github.com:CartoDB/data-science-book.git`
 `$ cd data-science-book`
 
-## Download and install docker
+### Download and install docker
 
 Follow instructions here: https://docs.docker.com/install/
 
-## Run image
+### Run the image
 
 Open your terminal and run
 
@@ -24,7 +28,7 @@ A local address will be created. Copy and paste the address in your browser, thi
 
 **Note**: If you have another Jupyter server running, make sure it's on a different port than 8888. Otherwise change the port number above or close down the other notebook server.
 
-## Install libraries and packages
+### Install libraries and packages
 
 Click New -> Terminal and go to the directory where you cloned the Github repository and run this script to install the required libraries
 
