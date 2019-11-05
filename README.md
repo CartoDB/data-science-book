@@ -1,6 +1,6 @@
 # Material for the ebook `Becoming a Spatial Data Scientist`
 
-### Link here: https://github.com/CartoDB/data-science-book
+## Link here: https://github.com/CartoDB/data-science-book
 
 ## Installation requirements
 
@@ -37,7 +37,7 @@ Note: the installation can take a while (10-15 min)
 
 ## Go to the `Chapters` folders and have fun :)
 
-### Chapter 1:
+### Chapter 1
 
 - `Visualizing spatial data with CARTOframes.ipynb` - A Jupyter notebook for easily visualizing your data on a map using CARTOframes.
 
@@ -46,3 +46,13 @@ Note: the installation can take a while (10-15 min)
 - `Discrete spatial models.ipynb` - A Jupyter notebook with examples of spatial models for discrete processes and visualize the results using CARTOframes.
 
 - `Continous spatial models.ipynb` - A Jupyter notebook with examples of spatial models for continuous processes and visualize the results using CARTOframes.
+
+### Chapter 2
+
+- Agglomerative Clustering ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%202/agglomerative.ipynb)) - a notebook demonstrating how to create spatially constrained clusters using agglomerative clustering
+- DBSCAN ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%202/dbscan.ipynb)) - a notebook demonstrating how to create clusters of points in geographic coordinates
+- SKATER ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%202/skater.ipynb)) - a notebook demonstrating how to create spatially constrained clusters that are homogeneous
+
+### Chapter 3
+
+TBD
