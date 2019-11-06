@@ -1,5 +1,5 @@
 import logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(levelname)s - %(message)s')
 
 import operator
 import random
@@ -16,7 +16,6 @@ from geopy.distance import great_circle
 from simanneal import Annealer
 
 import cartoframes
-from cartoframes import *
 from cartoframes.viz import *
 from cartoframes.data import *
 
@@ -25,6 +24,11 @@ from matplotlib import pyplot as plt
 plt.style.use('ggplot')
 
 
+#######################################################
+# Solve TSP using Ant Colony Optimization in Python 3 #
+# Code Source:                                        #
+# https://github.com/ppoffice/ant-colony-tsp          #
+#######################################################
 class Graph(object):
     def __init__(self, cost_matrix: list, rank: int):
         """
@@ -70,6 +74,7 @@ class ACO(object):
         """
         best_cost = float('inf')
         best_solution = []
+        all_costs = []
         for gen in range(self.generations):
             ants = [_Ant(self, graph) for i in range(self.ant_count)]
             for ind, ant in enumerate(ants):
@@ -82,7 +87,6 @@ class ACO(object):
                 # update pheromone
                 ant._update_pheromone_delta()
             self._update_pheromone(graph, ants)
-            #logging.info(f'[Generation #{gen}] [best cost: {best_cost}] [path: {best_solution}]')
             logging.info(f'[Generation #{gen}] [best cost: {best_cost}]')
         return best_solution, best_cost
     
@@ -146,10 +150,11 @@ def distance_aco(cities: dict):
             if kb == ka:
                 record_distance.append(0.0)
             else:
-                record_distance.append(great_circle(va[::-1], vb[::-1]).m)
+                record_distance.append(great_circle(va, vb).m)
         distance_matrix.append(record_distance)
     logging.info(f'[Done] Create A Distance Matrix For ACO')
     return distance_matrix
+
 
 
 def location(data: pd.DataFrame, 
@@ -167,6 +172,11 @@ def location(data: pd.DataFrame,
     return loc
 
 
+#######################################################
+# Christofides algorithm                              #
+# Code Source:                                        #
+# https://github.com/Retsediv/ChristofidesAlgorithm   #
+#######################################################
 
 def christofides(data):
     # build a graph
@@ -450,7 +460,7 @@ def TravelingSalesmanRun(loc: dict, iteration: int):
             if kb == ka:
                 distance_matrix[ka][kb] = 0.0
             else:
-                distance_matrix[ka][kb] = great_circle(va[::-1], vb[::-1]).m
+                distance_matrix[ka][kb] = great_circle(va, vb).m
     logging.info(f'[Done] Create A Distance Matrix)')
 
     for iter_i in range(iteration):
@@ -477,7 +487,7 @@ def TravelingSalesmanRun(loc: dict, iteration: int):
         
         state, e = tsp.anneal()
         
-        logging.info(f'[{iter_i+1}]: {e} meter route)')
+        logging.info(f'[{iter_i+1}]: {e} m route)')
         
         # record
         output_i = pd.DataFrame({'id': state, 'iteration': [iter_i]*len(loc), 'distance': [e]*len(loc)})

@@ -11,3 +11,5 @@ rpy2
 rtree
 netCDF4
 git+https://github.com/pysal/region.git#egg=region
+geopy
+simanneal

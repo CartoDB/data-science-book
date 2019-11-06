@@ -12,5 +12,6 @@ def get_retail_store_minnesota():
     """
     table_name = 'retail_store_minnesota'
     data = gpd.GeoDataFrame(Dataset(table_name).download(decode_geom=True))
+    data['store_id'] = data['store_id'].apply(lambda x: str(int(x)))
     data.crs = {'init': 'epsg:4326'}
     return data
