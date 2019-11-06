@@ -55,4 +55,4 @@ Note: the installation can take a while (10-15 min)
 
 ### Chapter 3
 
-- `Travelling Salesman Problem` ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/chp3/Chapter%203/Travelling%20Salesman%20Problem.ipynb)) - a notebook demostating how to solve travelling salesman problem. 
+- `Travelling Salesman Problem` ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%203/Travelling%20Salesman%20Problem.ipynb)) - a notebook demostating how to solve travelling salesman problem. 
