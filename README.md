@@ -15,14 +15,17 @@ The notebooks in this repository use a ready-to-run Docker image containing Jupy
 3. Run the image. Open your terminal and run 
   ```bash
   $ docker run --user root -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -e GRANT_SUDO=yes -v "$PWD":/home/jovyan/workspace jupyter/datascience-notebook
-  ```
-  A local address will be created. Copy and paste the address in your browser, this will launch Jupyter Lab.
-  **Note**: If you have another Jupyter server running, make sure it's on a different port than 8888. Otherwise change the port number above or close down the other notebook server.
-4. Install libraries and packages. Within Jupyter, click `New` -> `Terminal` and go to the directory where you cloned the Github repository and run this script to install the required libraries
+  ``` 
+
+  A local address will be created. Copy and paste the address in your browser, this will launch Jupyter Lab. **Note**: If you have another Jupyter server running, make sure it's on a different port than 8888. Otherwise change the port number above or close down the other notebook server. 
+
+4. Install libraries and packages. Within Jupyter, click `New` -> `Terminal` and go to the directory where you cloned the Github repository and run this script to install the required libraries 
   ```bash
   $ bash notebooks_start.sh
-  ```
+  ``` 
+
   Note: the installation can take a while (10-15 min)
+
 5. Start experimenting with the code in each of the Chapter directories 
 
 ## Table of Contents
