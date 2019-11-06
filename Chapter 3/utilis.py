@@ -24,6 +24,11 @@ from matplotlib import pyplot as plt
 plt.style.use('ggplot')
 
 
+#######################################################
+# Solve TSP using Ant Colony Optimization in Python 3 #
+# Code Source:                                        #
+# https://github.com/ppoffice/ant-colony-tsp          #
+#######################################################
 class Graph(object):
     def __init__(self, cost_matrix: list, rank: int):
         """
@@ -145,7 +150,7 @@ def distance_aco(cities: dict):
             if kb == ka:
                 record_distance.append(0.0)
             else:
-                record_distance.append(great_circle(va[::-1], vb[::-1]).m)
+                record_distance.append(great_circle(va, vb).m)
         distance_matrix.append(record_distance)
     logging.info(f'[Done] Create A Distance Matrix For ACO')
     return distance_matrix
@@ -167,6 +172,11 @@ def location(data: pd.DataFrame,
     return loc
 
 
+#######################################################
+# Christofides algorithm                              #
+# Code Source:                                        #
+# https://github.com/Retsediv/ChristofidesAlgorithm   #
+#######################################################
 
 def christofides(data):
     # build a graph
@@ -450,7 +460,7 @@ def TravelingSalesmanRun(loc: dict, iteration: int):
             if kb == ka:
                 distance_matrix[ka][kb] = 0.0
             else:
-                distance_matrix[ka][kb] = great_circle(va, vb).km
+                distance_matrix[ka][kb] = great_circle(va, vb).m
     logging.info(f'[Done] Create A Distance Matrix)')
 
     for iter_i in range(iteration):
@@ -477,7 +487,7 @@ def TravelingSalesmanRun(loc: dict, iteration: int):
         
         state, e = tsp.anneal()
         
-        logging.info(f'[{iter_i+1}]: {e} km route)')
+        logging.info(f'[{iter_i+1}]: {e} m route)')
         
         # record
         output_i = pd.DataFrame({'id': state, 'iteration': [iter_i]*len(loc), 'distance': [e]*len(loc)})
