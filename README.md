@@ -1,41 +1,31 @@
-# Material for the ebook `Becoming a Spatial Data Scientist`
+# Becoming a Spatial Data Scientist Materials
 
-## Link here: https://github.com/CartoDB/data-science-book
+Example notebooks to accompany [Becoming a Spatial Data Scientist](https://go.carto.com/ebooks/spatial-data-science).
 
 ## Installation requirements
 
 The notebooks in this repository use a ready-to-run Docker image containing Jupyter applications and interactive computing tools. To run the notebooks, please follow the instructions below.
 
-### Clone the repository 
+1. Clone this repository 
+  ```bash
+  $ git clone git@github.com:CartoDB/data-science-book.git`
+  $ cd data-science-book
+  ```
+2. Download and install docker. Follow instructions here: https://docs.docker.com/install/
+3. Run the image. Open your terminal and run 
+  ```bash
+  $ docker run --user root -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -e GRANT_SUDO=yes -v "$PWD":/home/jovyan/workspace jupyter/datascience-notebook
+  ```
+  A local address will be created. Copy and paste the address in your browser, this will launch Jupyter Lab.
+  **Note**: If you have another Jupyter server running, make sure it's on a different port than 8888. Otherwise change the port number above or close down the other notebook server.
+4. Install libraries and packages. Within Jupyter, click `New` -> `Terminal` and go to the directory where you cloned the Github repository and run this script to install the required libraries
+  ```bash
+  $ bash notebooks_start.sh
+  ```
+  Note: the installation can take a while (10-15 min)
+5. Start experimenting with the code in each of the Chapter directories 
 
-`$ git clone git@github.com:CartoDB/data-science-book.git`
-`$ cd data-science-book`
-
-### Download and install docker
-
-Follow instructions here: https://docs.docker.com/install/
-
-### Run the image
-
-Open your terminal and run
-
-```
-$ docker run --user root -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -e GRANT_SUDO=yes -v "$PWD":/home/jovyan/workspace jupyter/datascience-notebook
-```
-
-A local address will be created. Copy and paste the address in your browser, this will launch Jupyter Lab.
-
-**Note**: If you have another Jupyter server running, make sure it's on a different port than 8888. Otherwise change the port number above or close down the other notebook server.
-
-### Install libraries and packages
-
-Click New -> Terminal and go to the directory where you cloned the Github repository and run this script to install the required libraries
-
-`$ bash notebooks_start.sh`
-
-Note: the installation can take a while (10-15 min)
-
-## Go to the `Chapters` folders and have fun :)
+## Table of Contents
 
 ### Chapter 1
 
@@ -55,4 +45,4 @@ Note: the installation can take a while (10-15 min)
 
 ### Chapter 3
 
-- `Travelling Salesman Problem` ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%203/Travelling%20Salesman%20Problem.ipynb)) - a notebook demostating how to solve travelling salesman problem. 
+- `Travelling Salesman Problem` ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%203/Travelling%20Salesman%20Problem.ipynb)) - a notebook demonstrating how to solve travelling salesman problem.
