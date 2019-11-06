@@ -39,19 +39,19 @@ Note: the installation can take a while (10-15 min)
 
 ### Chapter 1
 
-- `Visualizing spatial data with CARTOframes.ipynb` - A Jupyter notebook for easily visualizing your data on a map using CARTOframes.
+- `Visualizing spatial data with CARTOframes` ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%201/Visualizing%20spatial%20data%20with%20CARTOframes.ipynb)) - a notebook for easily visualizing your data on a map using CARTOframes.
 
-- `Computing measures of spatial dependence.ipynb` - A Jupyter notebook for exploring spatial dependence in your data and visualize the results using CARTOframes.
+- `Computing measures of spatial dependence` ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%201/Computing%20measures%20of%20spatial%20dependence.ipynb)) - a notebook for exploring spatial dependence in your data and visualize the results using CARTOframes.
 
-- `Discrete spatial models.ipynb` - A Jupyter notebook with examples of spatial models for discrete processes and visualize the results using CARTOframes.
+- `Discrete spatial models` ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%201/Discrete%20Spatial%20Models.ipynb)) - a notebook with examples of spatial models for discrete processes and visualize the results using CARTOframes.
 
-- `Continous spatial models.ipynb` - A Jupyter notebook with examples of spatial models for continuous processes and visualize the results using CARTOframes.
+- `Continous spatial models`  ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%201/Continuous%20Spatial%20Models.ipynb)) - a notebook with examples of spatial models for continuous processes and visualize the results using CARTOframes.
 
 ### Chapter 2
 
-- Agglomerative Clustering ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%202/agglomerative.ipynb)) - a notebook demonstrating how to create spatially constrained clusters using agglomerative clustering
-- DBSCAN ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%202/dbscan.ipynb)) - a notebook demonstrating how to create clusters of points in geographic coordinates
-- SKATER ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%202/skater.ipynb)) - a notebook demonstrating how to create spatially constrained clusters that are homogeneous
+- `Agglomerative Clustering` ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%202/agglomerative.ipynb)) - a notebook demonstrating how to create spatially constrained clusters using agglomerative clustering
+- `DBSCAN` ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%202/dbscan.ipynb)) - a notebook demonstrating how to create clusters of points in geographic coordinates
+- `SKATER` ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%202/skater.ipynb)) - a notebook demonstrating how to create spatially constrained clusters that are homogeneous
 
 ### Chapter 3
 
