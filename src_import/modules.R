@@ -1,17 +1,17 @@
 libraries <- c('devtools',
-                'sp',
-                'spdep',
-                'rgdal', 
-                'raster',
-                'maptools',
-                'gstat', 
-                'reshape2',
-                'magrittr',
-                'dplyr',
-                'mgcv',
-                'splancs',
-                'INLA',
-                'INLAutils')
+               'sp',
+               #'spdep',
+               'rgdal', 
+               'raster',
+               'maptools',
+               'gstat', 
+               'reshape2',
+               'magrittr',
+               'dplyr',
+               'mgcv',
+               'splancs',
+               'INLA',
+               'INLAutils')
 CheckInstallPackages <- function(pkgs){
 
 #For each pkg in pkgs (attempt to load each package one at a time):
