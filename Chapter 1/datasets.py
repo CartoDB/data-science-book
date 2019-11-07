@@ -29,24 +29,24 @@ class GetMeuse():
 
     def loadpred_krg(self):
 
-        self.data_krg = pd.read_csv('./data/meuse_krg.csv')
+        self.data_krg = pd.read_csv('/tmp/meuse_krg.csv')
         self.data_krg  = gpd.GeoDataFrame(self.data_krg, geometry=gpd.points_from_xy(self.data_krg.x, self.data_krg.y))  
         self.data_krg.crs = {'init': 'epsg:28992'}
         self.data_krg_lonlat = self.data_krg.to_crs({'init': 'epsg:4326'})
 
-        self.data_grid_krg = pd.read_csv('./data/meuse.grid_krg.csv')
+        self.data_grid_krg = pd.read_csv('/tmp/meuse.grid_krg.csv')
         self.data_grid_krg  = gpd.GeoDataFrame(self.data_grid_krg, geometry=gpd.points_from_xy(self.data_grid_krg.x, self.data_grid_krg.y)) 
         self.data_grid_krg.crs = {'init': 'epsg:28992'}
         self.data_grid_krg_lonlat = self.data_grid_krg.to_crs({'init': 'epsg:4326'})
 
     def loadpred_INLAspde(self):
         
-        self.data_INLAspde = pd.read_csv('./data/meuse_INLAspde.csv')
+        self.data_INLAspde = pd.read_csv('/tmp/meuse_INLAspde.csv')
         self.data_INLAspde  = gpd.GeoDataFrame(self.data_INLAspde, geometry=gpd.points_from_xy(self.data_INLAspde.x, self.data_INLAspde.y))  
         self.data_INLAspde.crs = {'init': 'epsg:28992'}
         self.data_INLAspde_lonlat = self.data_INLAspde.to_crs({'init': 'epsg:4326'})
 
-        self.data_grid_INLAspde = pd.read_csv('./data/meuse.grid_INLAspde.csv')
+        self.data_grid_INLAspde = pd.read_csv('/tmp/meuse.grid_INLAspde.csv')
         self.data_grid_INLAspde  = gpd.GeoDataFrame(self.data_grid_INLAspde, geometry=gpd.points_from_xy(self.data_grid_INLAspde.x, self.data_grid_INLAspde.y)) 
         self.data_grid_INLAspde.crs = {'init': 'epsg:28992'}
         self.data_grid_INLAspde_lonlat = self.data_grid_INLAspde.to_crs({'init': 'epsg:4326'})
@@ -59,13 +59,13 @@ class GetBostonHousing():
         self.w = Queen.from_dataframe(self.data)
 
     def loadpred(self):
-        self.data_preds = gpd.read_file('./data/boston_housing_predictions.shp')
+        self.data_preds = gpd.read_file('/tmp/boston_housing_predictions.shp')
         self.data_preds.crs = {'init': 'epsg:4326'}
 
 ## The Crime dataset from UK Police data
 class GetCrimeLondon():
     def __init__(self, var, var_value):
-        self.filename = './data/UK_Police_street_crimes_2019_04.csv'
+        self.filename = '/tmp/UK_Police_street_crimes_2019_04.csv'
         self.data = gpd.GeoDataFrame(Dataset('uk_police_street_crimes_2019_04').download(decode_geom=True))
         self.data.crs = {'init': 'epsg:4326'}
         self.data = self.data[self.data[var] == var_value]
