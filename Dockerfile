@@ -13,5 +13,6 @@ USER jovyan
 COPY . /tmp/
 RUN pip install --requirement /tmp/requirements.txt
 RUN conda install -y r-rgdal
+RUN conda install -y r-spdep
 RUN Rscript /tmp/src_import/modules.R
 
