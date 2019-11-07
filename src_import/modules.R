@@ -1,6 +1,6 @@
 libraries <- c('devtools',
                'sp',
-               #'spdep',
+               'spdep',
                'rgdal', 
                'raster',
                'maptools',
