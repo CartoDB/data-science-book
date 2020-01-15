@@ -8,22 +8,20 @@ import pointpats
 import pointpats.centrography
 
 from cartoframes.auth import set_default_credentials
-from cartoframes.data import Dataset
+from cartoframes import read_carto
+from cartoframes import to_carto
 
 set_default_credentials('ebook-sds')
 
 ## The Meuse dataset from R gstat package
 class GetMeuse():
     def __init__(self):
-        self.data = gpd.GeoDataFrame(Dataset('meuse').download(decode_geom=True))
+        self.data = read_carto('meuse')
         self.data['log_zinc'] = np.log(self.data['zinc'])
-
-        self.data.crs = {'init': 'epsg:4326'}
         self.data = self.data.to_crs({'init': 'epsg:28992'})
         self.data_lonlat = self.data.to_crs({'init': 'epsg:4326'})
 
-        self.data_grid = gpd.GeoDataFrame(Dataset('meuse_grid').download(decode_geom=True))
-        self.data_grid.crs = {'init': 'epsg:4326'}
+        self.data_grid = read_carto('meuse_grid')
         self.data_grid = self.data_grid.to_crs({'init': 'epsg:28992'})
         self.data_grid_lonlat = self.data_grid.to_crs({'init': 'epsg:4326'})
 
@@ -54,8 +52,13 @@ class GetMeuse():
 ## The Boston dataset from R spData package
 class GetBostonHousing():
     def __init__(self):
-        self.data = gpd.GeoDataFrame(Dataset('boston_housing').download(decode_geom=True))# gpd.read_file(self.filename)
-        self.data.crs = {'init': 'epsg:4326'}
+        self.data_carto = read_carto('boston_housing')
+        ## Renaming the geometry column from 'the_geom' to 'geometry' 
+        ## (pysal expect the geometry column to be called 'geometry')
+        self.data = self.data_carto.copy()
+        self.data['geometry'] = self.data.geometry
+        self.data.drop(['the_geom'],axis = 1, inplace = True)
+        self.data = gpd.GeoDataFrame(self.data, geometry = 'geometry')
         self.w = Queen.from_dataframe(self.data)
 
     def loadpred(self):
@@ -66,19 +69,16 @@ class GetBostonHousing():
 class GetCrimeLondon():
     def __init__(self, var, var_value):
         self.filename = '/tmp/UK_Police_street_crimes_2019_04.csv'
-        self.data = gpd.GeoDataFrame(Dataset('uk_police_street_crimes_2019_04').download(decode_geom=True))
-        self.data.crs = {'init': 'epsg:4326'}
+        self.data = read_carto('uk_police_street_crimes_2019_04')
         self.data = self.data[self.data[var] == var_value]
         self.data_lonlat = self.data
-        self.data_lonlat = Dataset('''
+        self.data_lonlat = read_carto('''
             SELECT c.*
               FROM uk_police_street_crimes_2019_04 as c
               JOIN london_borough_excluding_mhw as g
               ON ST_Intersects(c.the_geom, g.the_geom)
         
-        ''').download(decode_geom=True)
-        self.data_lonlat = gpd.GeoDataFrame(self.data_lonlat)
-
+        ''')
         self.data = self.data.to_crs({'init': 'epsg:32630'})
 
     def pp(self):

@@ -1,6 +1,7 @@
 import geopandas as gpd
 from cartoframes.auth import set_default_credentials
-from cartoframes.data import Dataset
+from cartoframes import read_carto
+from cartoframes import to_carto
 
 set_default_credentials("ebook-sds")
 
@@ -14,8 +15,15 @@ def get_table(tablename):
     base_query = ("SELECT * FROM {tablename} ORDER BY cartodb_id ASC").format(
         tablename=tablename
     )
-    data = gpd.GeoDataFrame(Dataset(base_query).download(decode_geom=True))
+    data_carto = read_carto(base_query)
+    ## Renaming the geometry column from 'the_geom' to 'geometry' 
+    ## (pysal expect the geometry column to be called 'geometry')
+    data = data_carto.copy()
+    data['geometry'] = data.geometry
+    data.drop(['the_geom'],axis = 1, inplace = True)
+    data = gpd.GeoDataFrame(data, geometry = 'geometry')
     data.crs = {"init": "epsg:4326"}
+ 
     return data
 
 
