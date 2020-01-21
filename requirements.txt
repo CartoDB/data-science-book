@@ -1,5 +1,5 @@
 geopandas
-cartoframes==v1.0rc1
+cartoframes==v1.0.0
 shapely
 scikit-gstat
 scikit-learn
