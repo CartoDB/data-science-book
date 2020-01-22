@@ -12,7 +12,7 @@ The notebooks in this repository use a ready-to-run Docker image containing Jupy
 
 1. Clone this repository 
   ```bash
-  $ git clone git@github.com:CartoDB/data-science-book.git`
+  $ git clone git@github.com:CartoDB/data-science-book.git
   $ cd data-science-book
   ```
   
