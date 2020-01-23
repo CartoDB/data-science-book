@@ -20,7 +20,7 @@ The notebooks in this repository use a ready-to-run Docker image containing Jupy
 
 3. Run the image. Open your terminal and run 
   ```bash
-  $ docker run --user root -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -e GRANT_SUDO=yes -v "$PWD":/home/jovyan/workspace cartodb/ebook
+  $ docker run --user root -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -e GRANT_SUDO=yes -v "$PWD":/home/jovyan/workspace cartodb/data-science-book
   ```
 
   A local address will be created. Copy and paste the address in your browser, this will launch Jupyter Lab. **Note**: If you have another Jupyter server running, make sure it's on a different port than 8888. Otherwise change the port number above or close down the other notebook server. 
