@@ -10,8 +10,7 @@ libraries <- c('devtools',
                'dplyr',
                'mgcv',
                'splancs',
-               'INLA',
-               'INLAutils')
+               'INLA')
 CheckInstallPackages <- function(pkgs){
 
 #For each pkg in pkgs (attempt to load each package one at a time):
