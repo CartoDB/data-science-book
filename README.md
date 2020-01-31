@@ -31,7 +31,7 @@ The notebooks in this repository use a ready-to-run Docker image containing Jupy
 
 ## Table of Contents
 
-### Chapter 1
+### Chapter 1 - 2
 
 - `Visualizing spatial data with CARTOframes` ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%201/Visualizing%20spatial%20data%20with%20CARTOframes.ipynb)) - a notebook for easily visualizing your data on a map using CARTOframes.
 
@@ -41,12 +41,12 @@ The notebooks in this repository use a ready-to-run Docker image containing Jupy
 
 - `Continous spatial models`  ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%201/Continuous%20Spatial%20Models.ipynb)) - a notebook with examples of spatial models for continuous processes and visualize the results using CARTOframes.
 
-### Chapter 2
+### Chapter 3
 
 - `Agglomerative Clustering` ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%202/agglomerative.ipynb)) - a notebook demonstrating how to create spatially constrained clusters using agglomerative clustering
 - `DBSCAN` ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%202/dbscan.ipynb)) - a notebook demonstrating how to create clusters of points in geographic coordinates
 - `SKATER` ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%202/skater.ipynb)) - a notebook demonstrating how to create spatially constrained clusters that are homogeneous
 
-### Chapter 3
+### Chapter 4
 
 - `Travelling Salesman Problem` ([static preview](https://nbviewer.jupyter.org/github/CartoDB/data-science-book/blob/master/Chapter%203/Travelling%20Salesman%20Problem.ipynb)) - a notebook demonstrating how to solve travelling salesman problem.
