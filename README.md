@@ -12,7 +12,7 @@ The notebooks in this repository use a ready-to-run Docker image containing Jupy
 
 1. Clone this repository 
   ```bash
-  $ git clone git@github.com:CartoDB/data-science-book.git
+  $ git clone https://github.com/CartoDB/data-science-book.git
   $ cd data-science-book
   ```
   
@@ -23,7 +23,7 @@ The notebooks in this repository use a ready-to-run Docker image containing Jupy
   $ docker run --user root -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -e GRANT_SUDO=yes -v "$PWD":/home/jovyan/workspace cartodb/data-science-book
   ```
 
-  A local address will be created. Copy and paste the address in your browser, this will launch Jupyter Lab. **Note**: If you have another Jupyter server running, make sure it's on a different port than 8888. Otherwise change the port number above or close down the other notebook server. 
+  A local address will be created. Copy and paste the address in your browser, this will launch Jupyter Lab. **Note**: If you have another Jupyter server running, make sure it's on a different port than 8888. Otherwise change the port number above or close down the other notebook server. Just change ```$PWD``` to the appropriate path and you'll be good to go!
 
 4. Start experimenting with the code in each of the Chapter directories 
 
